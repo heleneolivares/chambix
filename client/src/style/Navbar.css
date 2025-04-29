@@ -1,13 +1,14 @@
 body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Poppins', sans-serif;
-    }
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* 🔥 Respetamos tu fuente */
+}
+
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-right: 25px;
+    padding: 10px 40px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -27,18 +28,25 @@ body {
     object-fit: contain;
 }
 
+/* Menu completo: links + login + post */
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* 🔥 Espaciado consistente entre links y botones */
+    margin-left: auto;
+}
+
+/* Links */
 .navbar-links {
     display: flex;
-    gap: 2rem;
     list-style: none;
-    margin-left: auto; 
-    margin-right: 2rem;
+    gap: 30px; /* 🔥 Distancia entre Home - Jobs - About */
 }
 
 .navbar-links li a {
     position: relative;
-    text-decoration: none; 
-    color: #333; 
+    text-decoration: none;
+    color: #333;
     font-weight: bold;
     font-size: 1rem;
     padding: 5px 0;
@@ -51,15 +59,33 @@ body {
     height: 2px;
     left: 0;
     bottom: 0;
-    background-color: #3b82f6; 
+    background-color: #3b82f6;
     transition: width 0.3s ease;
 }
 
 .navbar-links li a:hover::after {
     width: 100%;
-
 }
 
+/* Botón Login */
+.login-button {
+    padding: 6px 12px;
+    text-decoration: none;
+    margin-right: 1rem;
+    border: 2px solid #3b82f6;
+    border-radius: 999px;
+    color: #3b82f6;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1rem;
+}
+
+.login-button:hover {
+    background-color: #3b82f6;
+    color: #fff;
+}
+
+/* Botón Post a Job */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -71,6 +97,7 @@ body {
         transform: scale(1);
     }
 }
+
 .post-job button {
     padding: 10px 20px;
     background-color: #3b82f6;
@@ -86,7 +113,108 @@ body {
 }
 
 .post-job button:hover {
-    background-color: #2563eb; 
+    background-color: #2563eb;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
     animation: none;
+}
+
+/* Hamburguesa (responsive después) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+}
+/* Nueva separación Desktop */
+.navbar-links-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 20px;
+}
+
+/* -------------------------
+   Responsive móviles/tablets
+------------------------- */
+@media (max-width: 768px) {
+    /* Ocultar los links en mobile */
+    .navbar-links-container {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        transition: all 0.3s ease;
+    }
+
+    /* Mostrar links cuando abrimos el menú */
+    .navbar-links-container.active {
+        display: flex;
+    }
+
+    /* Links verticales */
+    .navbar-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Botones visibles siempre */
+    .navbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Mostrar hamburguesa solo en móvil */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        margin-left: 10px;
+    }
+
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+    }
+
+    .navbar-links li a {
+        font-size: 1.2rem;
+    }
+    /* Ajustar tamaño de texto de botones en móvil */
+    .login-button {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+}
+    .post-job button {
+    font-size: 0.8rem;
+    padding: 8px 14px;
+}
+
 }
