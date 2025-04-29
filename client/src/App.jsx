@@ -3,6 +3,7 @@ import axios from 'axios';
 import JobList from '../src/components/JobList.jsx';
 import JobForm from '../src/components/JobForm.jsx';
 import '../src/style/App.css';
+import Navbar from './components/Navbar.jsx';
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -22,10 +23,7 @@ function App() {
 
   return (
     <div className="page">
-      <header className="header">
-        <h1>Chambix 💼</h1>
-      </header>
-  
+      <Navbar />
       <main className="main">
         <JobForm onJobCreated={fetchJobs} />
         <JobList jobs={jobs} />
