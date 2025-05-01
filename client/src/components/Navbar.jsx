@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../style/Navbar.css';
 
 export default function Navbar() {
@@ -10,22 +11,26 @@ export default function Navbar() {
         <img src="/logo.png" alt="chambix logo" />
       </div>
 
-      {/* Links */}
       <div className={`navbar-links-container ${isMenuOpen ? 'active' : ''}`}>
         <ul className="navbar-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/jobs">Jobs</a></li>
-          <li><a href="/about">About</a></li>
+          <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+          <li><Link to="/jobs" onClick={() => setIsMenuOpen(false)}>Jobs</Link></li>
+          <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About</Link></li>
         </ul>
       </div>
 
-      {/* Botones */}
       <div className="navbar-actions">
-        <a href="/login" className="login-button">Login</a>
+        <Link to="/login" className="login-button">Login</Link>
         <div className="post-job">
           <button>Post a Job</button>
         </div>
-        <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <div className={`hamburger ${isMenuOpen ? 'open' : ''}`} 
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        role='button'
+        aria-label='toggle menu'
+        tabIndex={0}
+        onKeyDown={(e) => e.key === 'Enter' && setIsMenuOpen(!isMenuOpen)}
+        >
           <div></div>
           <div></div>
           <div></div>
