@@ -21,9 +21,10 @@ export default function Navbar() {
 
       <div className="navbar-actions">
         <Link to="/login" className="login-button">Login</Link>
-        <div className="post-job">
-          <button>Post a Job</button>
-        </div>
+        <Link to="/post-job" className="post-job" onClick={() => setIsMenuOpen(false)}>
+        <button>Post a Job</button>
+        </Link>
+        
         <div className={`hamburger ${isMenuOpen ? 'open' : ''}`} 
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         role='button'

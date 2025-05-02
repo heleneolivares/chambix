@@ -4,42 +4,14 @@ import axios from 'axios';
 import Navbar from './components/Navbar.jsx';
 import JobList from '../src/components/JobList.jsx';
 import JobForm from '../src/components/JobForm.jsx';
+import Home from '../src/pages/Home.jsx';
+import Jobs from '../src/pages/Jobs.jsx';
+import About from '../src/pages/About.jsx';
+import Login from '../src/pages/Login.jsx';
+import PostJob from '../src/pages/PostJob.jsx';
 import '../src/style/App.css';
 
-function Home ({fetchJobs, jobs}){
-  return (
-    <main className="main">
-      <JobForm onJobCreated={fetchJobs} />
-      <JobList jobs={jobs} />
-    </main>
-  );
-}
 
-function About () {
-  return (
-    <main className="main">
-      <h1>Acerca de nosotros</h1>
-      <p>Contenido de la sección Acerca de nosotros.</p>
-    </main>
-  );
-}
-
-function Login () {
-  return (
-    <main className="main">
-      <h1>Login</h1>
-      <p>Contenido de la sección Login.</p>
-    </main>
-  );
-}
-function Jobs () {
-  return (
-    <main className="main">
-      <h1>Jobs</h1>
-      <p>Contenido de la sección Jobs.</p>
-    </main>
-  );
-}
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -63,10 +35,11 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Home fetchJobs={fetchJobs} jobs={jobs} />} />
+        <Route path="/" element={<Home jobs={jobs} />} />
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/post-job" element={<PostJob fetchJobs={fetchJobs} />} />
       </Routes>
   
       <footer className="footer">
