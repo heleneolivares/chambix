@@ -1,9 +1,8 @@
-import JobList from '../components/JobList.jsx';
-
-export default function Home({ jobs }) {
+export default function Home() {
   return (
     <main className="main">
-      <JobList jobs={jobs} />
+      <h1>Bienvenida a Chambix</h1>
+      <p>Tu portal para publicar y encontrar empleos.</p>
     </main>
   );
 }

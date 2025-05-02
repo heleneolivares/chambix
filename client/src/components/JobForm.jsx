@@ -6,6 +6,7 @@ const JobForm = ({ onJobCreated }) => {
     title: '',
     company: '',
     location: '',
+    email: '',
     description: ''
   });
 
@@ -27,6 +28,7 @@ const JobForm = ({ onJobCreated }) => {
         title: '',
         company: '',
         location: '',
+        email: '',
         description: ''
       });
       setSuccess(true);
@@ -72,8 +74,14 @@ const JobForm = ({ onJobCreated }) => {
           value={formData.location}
           onChange={handleChange}
           required
-        /><br />
-
+          /><br />
+        <input type="text" 
+          name="email"
+          placeholder="Correo"
+          value={formData.email}
+          onChange={handleChange}
+          required /><br />
+          
         <textarea
           name="description"
           placeholder="Descripción"

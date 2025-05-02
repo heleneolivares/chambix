@@ -35,8 +35,8 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Home jobs={jobs} />} />
-        <Route path="/jobs" element={<Jobs />} />
+        <Route path="/" element={<Home/>} />
+        <Route path="/jobs" element={<Jobs jobs={jobs} fetchJobs={fetchJobs} />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/post-job" element={<PostJob fetchJobs={fetchJobs} />} />

@@ -1,9 +1,10 @@
-export default function Jobs() {
-    return (
-      <main className="main">
-        <h1>Jobs</h1>
-        <p>Contenido de la sección Jobs.</p>
-      </main>
-    );
-  }
-  
+import JobList from '../components/JobList.jsx';
+
+export default function Jobs({ jobs, fetchJobs }) {
+  return (
+    <main className="main">
+      <h1>Ofertas de trabajo</h1>
+      <JobList jobs={jobs} fetchJobs={fetchJobs} />
+    </main>
+  );
+}
