@@ -1,0 +1,56 @@
+.post-job-title {
+    font-size: 2rem;
+    color: #3b82f6;
+    text-align: center;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+}
+
+.job-form{
+align-items: center;
+display: flex;
+flex-direction: column;
+}
+.post-job-form-button {
+        padding: 10px 14px;
+        text-decoration: none;
+        border: 2px solid #3b82f6;
+        color: #3b82f6;
+        border-radius: 999px;
+        font-weight: bold;
+        font-size: 1rem;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        width: 100%;
+        max-width: 150px;
+        display: block;
+        margin: 1rem auto 0 auto; 
+      }
+      
+    
+.post-job-form-button:hover {
+    background-color: #3b82f6;
+    color: #fff;
+}
+
+
+@media (max-width: 600px) {
+    .post-job-title {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      padding: 0 1rem;
+    }
+  
+    .job-form {
+      padding: 0 2rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  
+
+    .post-job-form-button {
+      width: 100%;
+      font-size: 1rem;
+      padding: 12px;
+    }
+  }
+  

@@ -23,6 +23,12 @@ export default function JobList ({ jobs, fetchJobs }) {
           {jobs.map((job) => (
             <li key={job._id}  style={{marginBottom: '2rem'}}>
               <h3>{job.title}</h3>
+              <p><strong>Fecha:</strong> {' '}
+              {new Date(job.createdAt).toLocaleDateString('es-CL', {
+                day: '2-digit',
+                month: 'long',
+                year: 'numeric'
+              })}</p>
               <p><strong>Empresa:</strong> {job.company}</p>
               <p><strong>Ubicación:</strong> {job.location}</p>
               <p><strong>Correo:</strong> {job.email}</p>

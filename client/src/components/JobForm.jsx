@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
-
+import '../style/PostJob.css';
+import '../style/Form.css';
 const JobForm = ({ onJobCreated }) => {
   const [formData, setFormData] = useState({
     title: '',
@@ -35,7 +36,7 @@ const JobForm = ({ onJobCreated }) => {
 
       if (onJobCreated) {
         console.log('🟢 Ejecutando onJobCreated...');
-        onJobCreated(); // 👉 Esto actualiza la lista
+        onJobCreated(); 
       }
 
     } catch (error) {
@@ -45,14 +46,14 @@ const JobForm = ({ onJobCreated }) => {
 
   return (
     <div style={{ marginTop: '2rem' }}>
-      <h2>Publicar nuevo trabajo</h2>
-      {success && <p style={{ color: 'green' }}>✅ Trabajo creado con éxito</p>}
+      {success && <p style={{ color: 'green' }}>✅ Job posted successfully</p>}
 
-      <form onSubmit={handleSubmit}>
+      <form className='job-form' onSubmit={handleSubmit}>
         <input
           type="text"
           name="title"
-          placeholder="Título"
+          placeholder="Title"
+          className='form-input'
           value={formData.title}
           onChange={handleChange}
           required
@@ -61,7 +62,8 @@ const JobForm = ({ onJobCreated }) => {
         <input
           type="text"
           name="company"
-          placeholder="Empresa"
+          placeholder="Company"
+          className='form-input'
           value={formData.company}
           onChange={handleChange}
           required
@@ -70,27 +72,30 @@ const JobForm = ({ onJobCreated }) => {
         <input
           type="text"
           name="location"
-          placeholder="Ubicación"
+          placeholder="Location"
+          className='form-input'
           value={formData.location}
           onChange={handleChange}
           required
           /><br />
         <input type="text" 
           name="email"
-          placeholder="Correo"
+          placeholder="Email"
+          className='form-input'
           value={formData.email}
           onChange={handleChange}
           required /><br />
           
         <textarea
           name="description"
-          placeholder="Descripción"
+          placeholder="Description"
+          className='form-input'
           value={formData.description}
           onChange={handleChange}
           required
         /><br />
 
-        <button type="submit">Crear trabajo</button>
+        <button className='post-job-form-button' type="submit">Post Job</button>
       </form>
     </div>
   );
