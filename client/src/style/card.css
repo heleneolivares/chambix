@@ -1,28 +1,4 @@
 
-.new-job-offers-title {
-    font-size: 1.8rem;
-    margin: 2rem 0 1rem;
-    text-align: center;
-    color: #1e3a8a;
-  }
-
-  .carousel-wrapper {
-    position: relative;
-    padding: 0 2rem;
-  }
-  
-  .job-carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 1.5rem;
-    padding: 1rem 0;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-  }
-  .job-carousel::-webkit-scrollbar {
-    display: none;
-  }
-  
 
   .job-card {
     flex: 0 0 auto;
@@ -61,33 +37,7 @@
     color: #4b5563;
   }
   
-
-  .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #3b82f6;
-    border: none;
-    color: white;
-    font-size: 1.2rem;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    z-index: 1;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  }
-  .carousel-button.left {
-    left: 0;
-  }
-  .carousel-button.right {
-    right: 0;
-  }
-  
   @media (max-width: 768px) {
-    .carousel-button {
-      display: none; /* Hide arrows on small screens if you want */
-    }
   
     .job-card {
       width: 85vw;

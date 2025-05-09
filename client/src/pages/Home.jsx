@@ -1,12 +1,7 @@
 import { useRef } from 'react';
+import Card from '../components/Card.jsx';
 import '../style/Home.css';
-import '../style/card.css'
-import { FaCalendarAlt } from 'react-icons/fa';
-import { HiOutlineOfficeBuilding } from 'react-icons/hi';
-import { GoLocation } from 'react-icons/go'
-import { HiOutlineMail } from 'react-icons/hi';
 import { FaSearch } from 'react-icons/fa';
-
 export default function Home({ jobs }) {
   const carouselRef = useRef();
 
@@ -38,32 +33,16 @@ export default function Home({ jobs }) {
 
           <div className="job-carousel" ref={carouselRef}>
             {jobs.slice(0, 6).map((job, index) => (
-              <div className="job-card" key={index}>
-                <h3 className="job-card-title">{job.title}</h3>
-                <p className="job-card-date">
-                  <FaCalendarAlt className="calendar-icon" />
-                  {new Date(job.createdAt).toLocaleDateString('en-US', {
-                    month: 'long',
-                    day: '2-digit',
-                    year: 'numeric'
-                  })}
-                </p>
-             
-                <p className="job-card-company"> 
-                  <HiOutlineOfficeBuilding className="job-icon"/>
-                  {job.company}
-                  </p>
-                <p className="job-card-location">
-                  <GoLocation className="location-icon" />
-                  {job.location}
-                  </p>
-                <p className="job-card-email">
-                  <HiOutlineMail className="email-icon" />
-                  {job.email}</p>
-                <p className="job-card-description">{job.description}</p>
+              <Card
+                key={index}
+                title={job.title}
+                createdAt={job.createdAt}
+                company={job.company}
+                location={job.location}
+                email={job.email}
+                description={job.description}
+              />
 
-                <button className="apply-button">Apply Now</button>
-              </div>
             ))}
           </div>
 
