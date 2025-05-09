@@ -24,7 +24,7 @@ export default function JobList ({ jobs, fetchJobs }) {
             <li key={job._id}  style={{marginBottom: '2rem'}}>
               <h3>{job.title}</h3>
               <p><strong>Fecha:</strong> {' '}
-              {new Date(job.createdAt).toLocaleDateString('es-CL', {
+              {new Date(job.createdAt).toLocaleDateString('en-US', {
                 day: '2-digit',
                 month: 'long',
                 year: 'numeric'

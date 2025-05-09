@@ -1,0 +1,143 @@
+
+.new-job-offers-title {
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+    text-align: center;
+    color: #1e3a8a;
+  }
+
+  .carousel-wrapper {
+    position: relative;
+    padding: 0 2rem;
+  }
+  
+  .job-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .job-carousel::-webkit-scrollbar {
+    display: none;
+  }
+  
+
+  .job-card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem;
+    width: 280px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .job-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  .job-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-bottom: 0.5rem;
+  }
+  .job-card-date {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+  }
+  .job-card-description {
+    font-size: 0.95rem;
+    color: #374151;
+    margin-top: 0.5rem;
+  }
+  .job-card-company-location {
+    font-size: 0.95rem;
+    color: #4b5563;
+  }
+  
+
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #3b82f6;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  .carousel-button.left {
+    left: 0;
+  }
+  .carousel-button.right {
+    right: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-button {
+      display: none; /* Hide arrows on small screens if you want */
+    }
+  
+    .job-card {
+      width: 85vw;
+    }
+  }
+  .location-icon{
+    margin-right: 0.5rem;
+    color: #3b82f6;
+    vertical-align: middle;
+    font-size: 1rem;
+  }
+
+  .calendar-icon {
+    margin-right: 0.5rem;
+    color: #3b82f6;
+    vertical-align: middle;
+    font-size: 1rem;
+  }
+  .job-icon {
+    margin-right: 0.5rem;
+    color: #3b82f6;
+    vertical-align: middle;
+    font-size: 1rem;
+  }
+  .email-icon {
+    margin-right: 0.5rem;
+    color: #3b82f6;
+    vertical-align: middle;
+    font-size: 1rem;
+  }
+
+  
+  .apply-button {
+    display: block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 40%;
+    text-align: center;
+  }
+  
+  .apply-button:hover {
+    background-color: #2563eb;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
