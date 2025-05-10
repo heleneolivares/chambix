@@ -16,7 +16,7 @@ export default function About() {
         the IT job search experience, making it more accessible and impactful for
         everyone.
       </p>
-      <img src="../../public/about-us.png" alt="" />
+      <img src="/about-us.png" alt="" />
       </div>
 
     </main>

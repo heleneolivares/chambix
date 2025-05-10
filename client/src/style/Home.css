@@ -108,4 +108,7 @@ align-items: center;
     .carousel-button {
       display: none; /* Hide arrows on small screens if you want */
     }
+    .search-bar {
+        width: 85%;
+      }
   }
