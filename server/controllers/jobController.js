@@ -1,7 +1,7 @@
 import Job from '../models/Job.js';
 
 export const createJob = async (req, res) => {
-  console.log("🔁 Body recibido:", req.body); 
+  console.log("Body recibido:", req.body); 
   try {
     const newJob = new Job(req.body);
     const savedJob = await newJob.save();

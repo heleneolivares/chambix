@@ -10,4 +10,4 @@ const connectDB = async () => {
   }
 };
 
-export default connectDB; // ← ESTA LÍNEA ES CLAVE
+export default connectDB; 

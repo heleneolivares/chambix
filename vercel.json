@@ -1,0 +1,23 @@
+{
+    "projects": [
+      {
+        "name": "server",
+        "src": "server/index.js",
+        "use": "@vercel/node",
+        "env": {
+          "MONGO_URI": "@mongo_uri"
+        },
+        "node": {
+          "experimental-modules": true
+        }
+      },
+      {
+        "name": "client",
+        "src": "client/package.json",
+        "use": "@vercel/static-build",
+        "buildCommand": "npm run build",
+        "outputDirectory": "client/dist"
+      }
+    ]
+  }
+  
