@@ -10,6 +10,6 @@
     { "src": "/api/(.*)", "dest": "index.js" }
   ],
   "env": {
-    "MONGO_URI": "@mongo_uri"
+    "MONGO_URI": "mongodb+srv://hodelpino:MHvr0JFqkCXGZAOp@helenecluster.nedt18b.mongodb.net/chambix_db?retryWrites=true&w=majority&appName=heleneCluster"
   }
 }
