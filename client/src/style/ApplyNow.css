@@ -1,4 +1,4 @@
-.job-form-container {
+.apply-now-container {
     padding: 2rem;
     max-width: 600px;
     margin: 0 auto;
@@ -6,7 +6,14 @@
     font-family: "Arial", sans-serif;
   }
   
-  .job-form {
+  .apply-now-title {
+    font-size: 2rem;
+    color: #3b82f6;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .apply-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -16,7 +23,8 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  .form-input {
+  .apply-form input,
+  .apply-form textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #d1d5db;
@@ -26,22 +34,19 @@
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .form-input:focus {
+  .apply-form input:focus,
+  .apply-form textarea:focus {
     border-color: #3b82f6;
     box-shadow: 0px 0px 8px rgba(59, 130, 246, 0.2);
     outline: none;
   }
   
-  .form-input::placeholder {
-    color: #9ca3af;
-  }
-  
-  .job-form textarea {
+  .apply-form textarea {
     height: 120px;
     resize: none;
   }
   
-  .post-job-form-button {
+  .apply-now-form-button {
     padding: 12px;
     background-color: #3b82f6;
     color: #ffffff;
@@ -53,35 +58,35 @@
     transition: background-color 0.3s ease, transform 0.2s ease;
   }
   
-  .post-job-form-button:hover {
+  .apply-now-form-button:hover {
     background-color: #2563eb;
     transform: scale(1.02);
   }
   
-  .post-job-form-button:active {
+  .apply-now-form-button:active {
     background-color: #1d4ed8;
   }
   
-  .success-message {
+  .confirmation-message {
     color: #16a34a;
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
   
   @media (max-width: 600px) {
-    .job-form-container {
+    .apply-now-container {
       padding: 1rem;
     }
   
-    .job-form {
+    .apply-now-title {
+      font-size: 1.5rem;
+    }
+  
+    .apply-form {
       padding: 1rem;
     }
   
-    .form-input {
-      width: 100%;
-    }
-  
-    .post-job-form-button {
+    .apply-now-form-button {
       width: 100%;
     }
   }

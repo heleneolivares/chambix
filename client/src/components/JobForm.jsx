@@ -1,20 +1,20 @@
-import { useState } from 'react';
-import axios from 'axios';
-import '../style/PostJob.css';
-import '../style/Form.css';
+import { useState } from "react";
+import axios from "axios";
+import "../style/Form.css";
+
 const JobForm = ({ onJobCreated }) => {
   const [formData, setFormData] = useState({
-    title: '',
-    company: '',
-    location: '',
-    email: '',
-    description: ''
+    title: "",
+    company: "",
+    location: "",
+    email: "",
+    description: ""
   });
 
   const [success, setSuccess] = useState(false);
 
   const handleChange = (e) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value
     }));
@@ -24,80 +24,81 @@ const JobForm = ({ onJobCreated }) => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:3000/api/jobs/create', formData);
+      await axios.post("http://localhost:3000/api/jobs/create", formData);
       setFormData({
-        title: '',
-        company: '',
-        location: '',
-        email: '',
-        description: ''
+        title: "",
+        company: "",
+        location: "",
+        email: "",
+        description: ""
       });
       setSuccess(true);
 
       if (onJobCreated) {
-        if (import.meta.env.MODE === 'development') {
-          console.log('🟢 Executing onJobCreated...');
-        }
-        onJobCreated(); 
+        onJobCreated();
       }
-
     } catch (error) {
-      console.error('Error creating job:', error);
+      console.error("Error creating job:", error);
     }
   };
 
   return (
-    <div style={{ marginTop: '2rem' }}>
-      {success && <p style={{ color: 'green' }}>Job posted successfully</p>}
+    <div className="job-form-container">
+      {success && <p className="success-message">Job posted successfully!</p>}
 
-      <form className='job-form' onSubmit={handleSubmit}>
+      <form className="job-form" onSubmit={handleSubmit}>
         <input
           type="text"
           name="title"
-          placeholder="Title"
-          className='form-input'
+          placeholder="Job Title"
+          className="form-input"
           value={formData.title}
           onChange={handleChange}
           required
-        /><br />
+        />
 
         <input
           type="text"
           name="company"
           placeholder="Company"
-          className='form-input'
+          className="form-input"
           value={formData.company}
           onChange={handleChange}
           required
-        /><br />
+        />
 
         <input
           type="text"
           name="location"
           placeholder="Location"
-          className='form-input'
+          className="form-input"
           value={formData.location}
           onChange={handleChange}
           required
-          /><br />
-        <input type="text" 
+        />
+
+        <input
+          type="email"
           name="email"
-          placeholder="Email"
-          className='form-input'
+          placeholder="Contact Email"
+          className="form-input"
           value={formData.email}
           onChange={handleChange}
-          required /><br />
-          
+          required
+        />
+
         <textarea
           name="description"
-          placeholder="Description"
-          className='form-input'
+          placeholder="Job Description"
+          className="form-input"
           value={formData.description}
           onChange={handleChange}
           required
-        /><br />
+        ></textarea>
 
-        <button className='post-job-form-button' type="submit">Post Job</button>
+        <button className="post-job-form-button" type="submit">
+          Post Job
+        </button>
       </form>
     </div>
   );

@@ -1,3 +1,4 @@
+import {  useNavigate } from 'react-router-dom';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { HiOutlineOfficeBuilding } from 'react-icons/hi';
 import { GoLocation } from 'react-icons/go';
@@ -5,6 +6,11 @@ import { HiOutlineMail } from 'react-icons/hi';
 import '../style/card.css';
 
 export default function Card({ title, createdAt, company, location, email, description }) {
+  const navigate = useNavigate();
+  const handleApply = () => {
+    navigate('/apply');
+  }; 
+
   return (
     <div className="job-card">
       <h3 className="job-card-title">{title}</h3>
@@ -29,7 +35,7 @@ export default function Card({ title, createdAt, company, location, email, descr
         {email}
       </p>
       <p className="job-card-description">{description}</p>
-      <button className="apply-button">Apply Now</button>
+      <button onClick={handleApply} className="apply-button">Apply Now</button>
     </div>
   );
 }

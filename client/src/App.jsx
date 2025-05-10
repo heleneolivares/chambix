@@ -9,6 +9,7 @@ import About from '../src/pages/About.jsx';
 import Login from '../src/pages/Login.jsx';
 import PostJob from '../src/pages/PostJob.jsx';
 import Footer from './components/Footer.jsx';
+import ApplyNow from '../src/pages/ApplyNow.jsx';
 import '../src/style/App.css';
 
 
@@ -21,7 +22,7 @@ function App() {
       const res = await axios.get('http://localhost:3000/api/jobs');
       setJobs(res.data);
     } catch (error) {
-      console.error('Error al obtener trabajos:', error);
+      console.error('Error fetching jobs:', error);
     }
   };
 
@@ -40,6 +41,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/post-job" element={<PostJob fetchJobs={fetchJobs} />} />
+        <Route path="/apply" element={<ApplyNow />} />
       </Routes>
 
       <Footer />
