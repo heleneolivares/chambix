@@ -8,6 +8,7 @@ import Jobs from '../src/pages/Jobs.jsx';
 import About from '../src/pages/About.jsx';
 import Login from '../src/pages/Login.jsx';
 import PostJob from '../src/pages/PostJob.jsx';
+import Footer from './components/Footer.jsx';
 import '../src/style/App.css';
 
 
@@ -40,10 +41,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/post-job" element={<PostJob fetchJobs={fetchJobs} />} />
       </Routes>
-  
-      <footer className="footer">
-        <p>© 2025 Chambix - Todos los derechos reservados</p>
-      </footer>
+
+      <Footer />
     </div>
     </BrowserRouter>
   );

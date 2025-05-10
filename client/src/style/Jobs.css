@@ -4,3 +4,11 @@
     text-align: center;
     color: #1e3a8a;
 }
+
+.jobs-list {
+    display: flex;
+    margin: 2rem auto;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
