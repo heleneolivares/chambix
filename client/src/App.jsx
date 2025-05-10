@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from './components/Navbar.jsx';
-import JobList from '../src/components/JobList.jsx';
 import JobForm from '../src/components/JobForm.jsx';
 import Home from '../src/pages/Home.jsx';
 import Jobs from '../src/pages/Jobs.jsx';

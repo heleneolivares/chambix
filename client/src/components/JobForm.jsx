@@ -35,18 +35,20 @@ const JobForm = ({ onJobCreated }) => {
       setSuccess(true);
 
       if (onJobCreated) {
-        console.log('🟢 Ejecutando onJobCreated...');
+        if (import.meta.env.MODE === 'development') {
+          console.log('🟢 Executing onJobCreated...');
+        }
         onJobCreated(); 
       }
 
     } catch (error) {
-      console.error('Error al crear trabajo:', error);
+      console.error('Error creating job:', error);
     }
   };
 
   return (
     <div style={{ marginTop: '2rem' }}>
-      {success && <p style={{ color: 'green' }}>✅ Job posted successfully</p>}
+      {success && <p style={{ color: 'green' }}>Job posted successfully</p>}
 
       <form className='job-form' onSubmit={handleSubmit}>
         <input
