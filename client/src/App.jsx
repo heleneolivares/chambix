@@ -16,10 +16,11 @@ import '../src/style/App.css';
 
 function App() {
   const [jobs, setJobs] = useState([]);
+  const API_URL = import.meta.env.VITE_API_URL;
   
   const fetchJobs = async () => {
     try {
-      const res = await axios.get('http://localhost:3000/api/jobs');
+      const res = await axios.get(`${API_URL}/api/jobs`);
       setJobs(res.data);
     } catch (error) {
       console.error('Error fetching jobs:', error);
