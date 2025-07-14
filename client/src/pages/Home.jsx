@@ -1,9 +1,25 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import axios from 'axios';
 import Card from '../components/Card.jsx';
+import searchBar from '../components/SearchBar.jsx';
 import '../style/Home.css';
-import { FaSearch } from 'react-icons/fa';
+import SearchBar from '../components/SearchBar.jsx';
 export default function Home({ jobs }) {
+  const [filteredJobs, setFilteredJobs] = useState([]);
   const carouselRef = useRef();
+
+  useEffect (() => {
+    setFilteredJobs(jobs);
+  }, [jobs]);
+
+  const handleSearch = async (searchTerm) => {
+    try {
+      const res = await axios.get (`/api/jobs?search=${encodeURIComponent(searchTerm)}`);
+      setFilteredJobs(res.data);
+    } catch (error) {
+      console.error('Error searching jobs:', error);
+    }
+  };
 
   const scrollLeft = () => {
     carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' });
@@ -18,10 +34,7 @@ export default function Home({ jobs }) {
       <header className="home-hero">
         <div className="hero-overlay">
           <h1>Find your next job</h1>
-          <div className="search-container">
-            <FaSearch className="search-icon" />
-            <input type="text" className="search-bar" placeholder="Search for jobs" />
-          </div>
+          <SearchBar onSearch={handleSearch} />
         </div>
       </header>
 
