@@ -14,9 +14,10 @@ function SearchBar ({ onSearch}) {
     }; 
 
     return ( 
-        <div classNAme="search-container">
+        <div className="search-container">
             <FaSearch className="search-icon" />
-            <input type="text"
+            <input 
+            type="text"
              className="search-bar" 
              placeholder="Search for jobs"
               value={input} 

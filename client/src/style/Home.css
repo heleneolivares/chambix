@@ -38,14 +38,14 @@ align-items: center;
   
   .search-icon {
     position: absolute;
-    top: 50%;
-    left: 14px;
-    transform: translateY(-50%);
+    top: 50%; 
+    left: 14px; 
+    transform: translateY(-50%); 
     color: #9ca3af;
     font-size: 1rem;
-  }
+  } 
   
-  .search-bar {
+ .search-bar {
     width: 100%;
     padding: 10px 12px 10px 36px;
     border: 1px solid #ccc;
@@ -54,6 +54,7 @@ align-items: center;
     outline: none;
     transition: border-color 0.3s ease;
   }
+    
   
   .search-bar:focus {
     border-color: #3b82f6;
